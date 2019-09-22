@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   } 
 
   
-  root 'users/sessions#new'
+  
 end
