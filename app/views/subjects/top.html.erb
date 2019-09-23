@@ -1,2 +1,9 @@
 <h1>Subjects#top</h1>
 <p>Find me in app/views/subjects/top.html.erb</p>
+
+<% @subjects.each do |subject|%>
+  <div>
+    <%= subject.name %>
+  </div>
+
+<% end %>
