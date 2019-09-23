@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'   
   } 
 
-  
+  get "subjects/:id" =>"subjects#show"
   
 end

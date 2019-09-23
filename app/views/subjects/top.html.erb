@@ -1,9 +1,9 @@
 <h1>Subjects#top</h1>
 <p>Find me in app/views/subjects/top.html.erb</p>
-
+<p>科目一覧</p>
 <% @subjects.each do |subject|%>
   <div>
-    <%= subject.name %>
+    <%=link_to(subject.name ,"/subjects/#{subject.id}") %>
   </div>
 
 <% end %>
