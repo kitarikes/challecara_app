@@ -1,9 +1,15 @@
-<h1>Subjects#top</h1>
-<p>Find me in app/views/subjects/top.html.erb</p>
-<p>科目一覧</p>
-<% @subjects.each do |subject|%>
-  <div>
-    <%=link_to(subject.name ,"/subjects/#{subject.id}") %>
-  </div>
-
+<% @subjects.each do |subject| %>
+  
+  
+  <!-- 追加 -->
+  <% if user_signed_in? %>
+    <% if subject.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
+        <p><span>お気に入り解除: </span><%=link_to subject.favorites.count, subject_favorites_path subject.id), method: :delete %></p>
+    <% else %>
+        <p><span>お気に入り登録: </span><%=link_to subject.favorites.count, subject_favorites_path(subject.id), method: :post %></p>
+    <% end %>
+  <% else %>
+    <p><span>お気に入り数: </span><%= subject.favorites.count %></p>
+  <% end %>
+  <!-- ここまで -->
 <% end %>

@@ -2,7 +2,7 @@ class CreateQuestions < ActiveRecord::Migration[5.2]
   def change
     create_table :questions do |t|
       t.string :image_names
-      t.string :
+      
 
       t.timestamps
     end

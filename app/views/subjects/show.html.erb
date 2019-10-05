@@ -1,3 +1,7 @@
-<%=@subject.id%>
-<%=@subject.name%>
-<p>以下、科目ごとのタイムライン、問題など.</p>
+<p><span>email: </span><%= @user.email %></p>
+
+<!-- 追加 -->
+<% @favorite_subjects.each do |subject| %>
+  <hr>
+  <p><span>ファボツイート内容: </span><%=link_to subject.body, subject_path(subject.id) %></p>
+<% end %>
