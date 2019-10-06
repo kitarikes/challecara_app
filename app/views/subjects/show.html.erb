@@ -1,7 +1,7 @@
-<p><span>email: </span><%= @user.email %></p>
+
 
 <!-- 追加 -->
 <% @favorite_subjects.each do |subject| %>
   <hr>
-  <p><span>ファボツイート内容: </span><%=link_to subject.body, subject_path(subject.id) %></p>
+  <p><span>お気に入り: </span><%=link_to subject.body, subject_path(subject.id) %></p>
 <% end %>

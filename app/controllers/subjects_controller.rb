@@ -1,17 +1,18 @@
 class SubjectsController < ApplicationController
-  def top
+  before_action :authenticate_user!, except: [:index]  # deviseのメソッドで「ログインしていないユーザーをログイン画面に送る」メソッド
+  def new
+    @subject = Subject.new # 新規投稿用の空のインスタンス
+  end
+
+  def create
+    # 後で書きます。
+  end
+
+  def index
     @subjects = Subject.all
   end
 
   def show
-    @user = User.find(params[:id])
-    
-    @favorite_tweets = @user.favorite_subjects # 追加
+    @subject = Subject.find(params[:id])
   end
-
-
-
-
-
-
 end

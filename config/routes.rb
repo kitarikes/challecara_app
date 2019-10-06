@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-#==========================
+#========================== 
+#  get 'users/index'
+#  get 'users/show'
+
 #  get 'favorites/create'
 #  get 'favorites/destroy'
 #========================== 
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
 #====================================
   
   
-  get 'subjects/top'
+  
   get 'home/top'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
@@ -20,6 +23,6 @@ Rails.application.routes.draw do
   resources :subjects
   resources :users
 
-  get "subjects/show" =>"subjects#show"
+  
   
 end
