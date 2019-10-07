@@ -5,7 +5,7 @@ class SubjectsController < ApplicationController
   end
 
   def create
-    # 後で書きます。
+    
   end
 
   def index
