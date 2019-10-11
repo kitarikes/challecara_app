@@ -6,5 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    
+    @favorite_subjects = @user.favorite_subjects # 追加
   end
 end

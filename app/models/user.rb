@@ -6,5 +6,5 @@ class User < ApplicationRecord
   
   
   has_many :favorites
-  has_many :favorites_subjects, through: :favorites
+  has_many :favorite_subjects, through: :favorites ,source: :subject
 end
