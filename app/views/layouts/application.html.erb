@@ -8,9 +8,16 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-w  <header>
+  <header>
   <%=link_to("HOME","/home/top")%>
-  <%=link_to("マイページ","/users/3")%>
+  
+  <% if current_user %> <%# 追加しました %>
+    <%=link_to("マイページ", user_path(current_user))%>
+  <% else %>
+    <%=link_to("マイページ", "/home/top") %>
+  <% end %>
+
+  <%=link_to("教科一覧", "/subjects")%>
   
   </header>
   <body>
